@@ -1,0 +1,228 @@
+Q.1
+
+a)
+   sakshi@LAPTOP-PNS5Q7PV:~$ ls
+   1  3  5     file         folder   folder2  hi      myfile2     name.sh  sakshi  snap
+   2  4  CDAC  filename.sh  folder1  hello    myfile  myfile5.sh  sai.sh   shiv
+
+sakshi@LAPTOP-PNS5Q7PV:~$ mkdir LinuxAssignment
+sakshi@LAPTOP-PNS5Q7PV:~$ cd LinuxAssignment
+sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$
+---------------------------------------------------------------------------
+b)   cd LinuxAssignment  
+     touch file1.txt  
+     nano file1.txt
+     cat file1.txt
+
+sakshi@LAPTOP-PNS5Q7PV:~$ mkdir LinuxAssignment
+sakshi@LAPTOP-PNS5Q7PV:~$ cd LinuxAssignment
+sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$ cat > File1.txt
+-------------------------------------------------------------------------
+
+c)   LinuxAssignment$ mkdir docs
+     LinuxAssignment$ cp File1.tt docs 
+     LinuxAssignment$ ls
+     File1.txt
+      
+---------------------------------------------------------------------------
+d)   cp file1.txt LinuxAssignment/docs/file2.txt
+
+e)   chmod u=rwx,go=r file2.txt
+     chown $(whoami) file2.txt
+
+f)   ls LinuxAssignment
+     ls/
+
+g)   find . -type f -name "*.txt"
+     grep "specific_word" file_name.txt
+
+h)   date
+      sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$ date
+      Thu Mar  7 22:24:18 IST 2024
+------------------------------------------------------------------------------------
+i)   hostname -I
+   
+       sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$  hostname -I
+       192.168.64.103
+     ping remote_server_address
+     sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$ ping remote_server_address
+      ping: remote_server_address: Name or service not known
+------------------------------------------------------------------
+j)   zip -r docs.zip docss
+	sakshi@LAPTOP-PNS5Q7PV:~/LinuxAssignment$  zip -r docs.zip docs
+  adding: docs/ (stored 0%)
+     unzip docs.zip -d extracted_docs
+---------------------------------------------------------------
+
+k)   vi file1.txt
+     sed -i 's/original_word/replacement_word/g' file1.txt
+-------------------------------------------------------------------------------------------------------------------
+  Q2
+     a) head -n 10 data.txt
+
+       sakshi@LAPTOP-PNS5Q7PV:~$ cat > data.txt
+       This is file 1
+       This is file 2
+	This is file 3
+	This is file 4
+	This is file 5
+	This is file 6
+	This is file 7
+	8
+	9
+	10
+	11
+	12
+	13
+	14
+	15
+	sakshi@LAPTOP-PNS5Q7PV:~$ head -n 10 data.txt
+	This is file 1
+	This is file 2
+	This is file 3
+	This is file 4
+	This is file 5
+	This is file 6
+	This is file 7
+	8
+	9
+	10
+	sakshi@LAPTOP-PNS5Q7PV:~$
+------------------------------------------------
+
+ b) 	tail -n 5 data.txt
+
+	sakshi@LAPTOP-PNS5Q7PV:~$ tail -n 5 data.txt
+	11
+	12
+	13
+	14
+	15
+---------------------------------------------------	
+     c) head -n 15 numbers.txt
+       
+   	sakshi@LAPTOP-PNS5Q7PV:~$ cat > numbers.txt
+	11
+	22
+	33
+	44
+	55
+	66
+	77
+	88
+	99
+	10
+	111
+	222
+	333
+	444
+	555
+	666
+	77
+	888
+	99
+	777
+	99
+	213
+	sakshi@LAPTOP-PNS5Q7PV:~$ head -n 15 numbers.txt
+	11
+	22
+	33
+	44
+	55
+	66
+	77
+	88
+	99
+	10
+	111
+	222
+	333
+	444
+	555
+--------------------------------------------------------------------------
+     d) tail -n 3 numbers.txt
+	sakshi@LAPTOP-PNS5Q7PV:~$ tail -n 3 numbers.txt
+	777
+	99
+	213
+----------------------------------------------------------------------------
+     e) tr '[:lower:]' '[:upper:]' < input.txt > output.txt
+        this is lowercase
+
+THIS IS UPPERCASE
+
+$P3C14L C#4R4CT3R$
+
+1234567890
+
+OUTPUT
+
+Uppercase
+
+THIS IS LOWERCASE
+
+THIS IS UPPERCASE
+
+$P3C14L C#4R4CT3R$
+--------------------------------------------------------------------------------
+
+     f) sort duplicate.txt | uniq 
+sakshi@LAPTOP-PNS5Q7PV:~$ cat > duplicate.text
+this is lowercase
+
+THIS IS UPPERCASE
+
+$P3C14L C#4R4CT3R$
+
+1234567890
+
+OUTPUT
+
+Uppercase
+
+THIS IS LOWERCASE
+
+THIS IS UPPERCASE
+
+$P3C14L C#4R4CT3R$
+
+sakshi@LAPTOP-PNS5Q7PV:~$ sort duplicate.txt | uniq
+sort: cannot read: duplicate.txt: No such file or directory
+sakshi@LAPTOP-PNS5Q7PV:~$ sort duplicate.text | uniq
+
+$P3C14L C#4R4CT3R$
+1234567890
+OUTPUT
+THIS IS LOWERCASE
+THIS IS UPPERCASE
+Uppercase
+this is lowercase
+sakshi@LAPTOP-PNS5Q7PV:~$ sort duplicate.text | uniq
+
+
+-----------------------------------------------------------------
+
+
+ g) sort fruit.txt | uniq -c
+
+sakshi@LAPTOP-PNS5Q7PV:~$ cat > fruit.txt
+apple
+banana
+apple
+orange
+apple
+pineapple
+bannanasakshi@LAPTOP-PNS5Q7PV:~$ sort fruit.txt | uniq -c
+      2 apple
+      1 apple
+      1 banana
+      1 bannana
+      1 orange
+      1 pineapple
+sakshi@LAPTOP-PNS5Q7PV:~$
+
+----------------------------------------------------------------------
+
+
+
