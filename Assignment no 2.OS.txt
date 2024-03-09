@@ -1,0 +1,352 @@
+
+
+
+What will the following commands do?
+
+a)     echo "Hello, World!": 
+            Prints "Hello, World!" to the terminal.
+
+
+b)	name="Productive": 
+	Creates a variable named name with the value "Productive".
+
+
+c)	touch file.txt:
+	 Creates an empty file named file.txt.
+
+d)	ls -a: 
+	Lists all files and directories in the current directory, including hidden ones (those starting with a dot).
+
+c)	rm file.txt:
+	 Deletes the file named file.txt.
+
+d)	cp file1.txt file2.txt:
+	 Copies the contents of file1.txt to file2.txt.
+
+e)	mv file.txt /path/to/directory/:
+	 Moves the file file.txt to the directory specified.
+
+g)	chmod 755 script.sh: 
+	Changes the permissions of script.sh to make it executable by the owner and readable by everyone.
+
+h)	grep "pattern" file.txt:
+	 Searches for the string "pattern" in the file file.txt.
+
+i)	kill PID: 
+	Terminates the process with the specified PID.
+
+j)	mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt:
+	 Creates a directory named mydir, navigates into it, creates a file named file.txt, writes "Hello, World!" to file.txt, and then prints the contents of file.txt.
+
+k)	ls -l | grep ".txt": 
+	Lists all files in long format and filters only those containing ".txt" in their names.
+
+l)	cat file1.txt file2.txt | sort | uniq:
+	 Concatenates file1.txt and file2.txt, sorts the lines alphabetically, and removes duplicate lines.
+
+m)	ls -l | grep "^d":
+	 Lists only directories in long format.
+
+n)	grep -r "pattern" /path/to/directory/: 
+	Recursively searches for the string "pattern" in all files under /path/to/directory/.
+
+o)	cat file1.txt file2.txt | sort | uniq –d:
+	 Concatenates file1.txt and file2.txt, sorts the lines alphabetically, and prints only the duplicate lines.
+
+p)	chmod 644 file.txt: 
+	Changes the permissions of file.txt to make it readable and writable by the owner and readable by everyone else.
+
+q)	cp -r source_directory destination_directory: 
+	Copies source_directory and all its contents recursively to destination_directory.
+
+r)	find /path/to/search -name "*.txt":
+	 Recursively searches for files with the extension .txt under /path/to/search.
+
+s)	chmod u+x file.txt: Adds execute permission for the owner (u) to file.txt.
+
+t)	echo $PATH: 
+	Prints the value of the PATH environment variable, which lists directories where executable files are located.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Identify True or False:
+
+	1. ls is used to list files and directories in a directory.
+	----true
+
+	2. mv is used to move files and directories.
+	----true
+
+	3. cd is used to copy files and directories.
+	----false
+
+	4. pwd stands for "print working directory" and displays the current directory.
+ 	-----true
+
+	5. grep is used to search for patterns in files.
+        -----true
+
+	6. chmod 755 file.txt gives read, write, and execute permissions to the owner, and read and execute
+	permissions to group and others.
+ 	------true
+
+	7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1
+	if directory1 does not exist.
+	-------true
+
+	8. rm -rf file.txt deletes a file forcefully without confirmation
+	-------true
+
+---------------------------------------------------------------------------------------------------
+
+Identifying the incorrect commands:
+
+	1) chmodx is used to change file permissions. 
+	- Incorrect (Correct command: chmod)
+
+	2) cpy is used to copy files and directories. 
+	- Incorrect (Correct command: cp)
+
+	3) mkfile is used to create a new file. 
+	- Incorrect (Correct command: touch)
+
+
+	4) catx is used to concatenate files. 
+	- Incorrect (Correct command: cat)
+
+	5)rn is used to rename files. 
+	- Incorrect (Correct command: mv)
+
+
+
+-------------------------------------------------------------------------------------------------------------
+Part C
+Question 1: Write a shell script that prints "Hello, World!" to the terminal.
+	sakshi@LAPTOP-PNS5Q7PV:~$ vi file.sh
+	sakshi@LAPTOP-PNS5Q7PV:~$ chmod +x file.sh
+	sakshi@LAPTOP-PNS5Q7PV:~$ ./file.sh
+    Hello world
+-------------------------------------------------------------------------------------------------------
+
+Q 2:   Declare a variable named "name" and assign the value "CDAC Mumbai" to it. Print the
+value of the variable.
+----
+#!/bin/bash
+name="CDAC Mumbai"
+echo "$name"
+
+O//P: CDAC Mumbai
+----------------------------------------------------------------------------------------------------------------
+
+Question 3: Write a shell script that takes a number as input from the user and prints it
+
+#!/bin/bash
+
+echo "Please enter a number:"
+
+read number
+
+echo "The number you entered is: $number"
+
+O/P: Please enter a number:
+     42
+     The number you entered is: 42
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+Question 4: Write a shell script that performs addition of two numbers (e.g., 5 and 3) and prints the
+result.
+
+#!/bin/bash
+
+echo "Enter the first number:"
+read num1
+
+echo "Enter the second number:"
+read num2
+
+result=$((num1 + num2))
+
+echo "The result of addition is: $result"
+
+chmod +x addition.sh
+./addition.sh
+
+o/p:
+Enter the first number:
+5
+Enter the second number:
+3
+The result of addition is: 8
+
+---------------------------------------------------------------------------------------------------------
+
+Question 5: Write a shell script that takes a number as input and prints "Even" if it is even, otherwise
+prints "Odd".
+
+#!/bin/bash
+
+echo "Enter a number:"
+read number
+
+if ((number % 2 == 0)); then
+    echo "Even"
+else
+    echo "Odd"
+fi
+
+chmod +x check_even_odd.sh
+./check_even_odd.sh
+
+O/P: Enter a number:
+7
+Odd
+
+-------------------------------------------------------------------------------------------------------------------
+
+Question 6: Write a shell script that uses a for loop to print numbers from 1 to 5.
+#!/bin/bash
+
+for (( number=1; number<=5; number++ )); do
+    echo $number
+done
+
+chmod +x print_numbers.sh
+./print_numbers.sh
+
+O/p--
+1
+2
+3
+4
+5
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Question 7: Write a shell script that uses a while loop to print numbers from 1 to 5.
+#!/bin/bash
+
+
+number=1
+
+while [ $number -le 5 ]; do
+    echo $number
+    # Increment the number
+    number=$((number + 1))
+done
+
+chmod +x print_numbers.sh
+./print_numbers.sh
+o/p--
+1
+2
+3
+4
+5
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+Question 8: Write a shell script that checks if a file named "file.txt" exists in the current directory. If it
+does, print "File exists", otherwise, print "File does not exist"
+
+#!/bin/bash
+
+
+if [ -e "file.txt" ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi
+
+chmod +x check_file_existence.sh
+./check_file_existence.sh
+o/p--File exists
+------------------------------------------------------------------------------------------------------------------------
+
+Question 9: Write a shell script that uses the if statement to check if a number is greater than 10 and
+prints a message accordingly
+
+#!/bin/bash
+
+
+check_greater_than_10() {
+    number=$1
+    if [ $number -gt 10 ]; then
+        echo "$number is greater than 10"
+    else
+        echo "$number is not greater than 10"
+    fi
+}
+
+chmod +x check_greater_than_10.sh
+./check_greater_than_10.sh
+
+5 is not greater than 10
+15 is greater than 10
+--------------------------------------------------------------------------------------------------------------------------
+
+Question 10: Write a shell script that uses nested for loops to print a multiplication table for numbers
+from 1 to 5. The output should be formatted nicely, with each row representing a number and each
+column representing the multiplication result for that number.
+
+#!/bin/bash
+
+
+for i in {1..5}; do
+    
+    for j in {1..5}; do
+        
+        result=$((i * j))
+        
+        printf "%-4d" $result
+    done
+   
+    echo
+done
+
+chmod +x multiplication_table.sh
+./multiplication_table.sh
+
+1   2   3   4   5   
+2   4   6   8   10  
+3   6   9   12  15  
+4   8   12  16  20  
+5   10  15  20  25  
+
+------------------------------------------------------------------------------------------------------------
+
+Question 11: Write a shell script that uses a while loop to read numbers from the user until the user enters
+a negative number. For each positive number entered, print its square. Use the break statement to exit the
+loop when a negative number is entered.
+
+#!/bin/bash
+
+echo "Enter numbers (enter a negative number to exit):"
+
+while :
+do
+   read -p "Enter a number: " number
+    
+    if [ $number -lt 0 ]; then
+        echo "Exiting loop..."
+        break
+    fi
+    
+    square=$((number * number))
+    
+    echo "Square of $number is $square"
+done
+
+O/P:
+
+Enter numbers (enter a negative number to exit):
+Enter a number: 5
+Square of 5 is 25
+Enter a number: 8
+Square of 8 is 64
+Enter a number: -3
+Exiting loop...
+--------------------------------------------------------------------------------------------------------------------------
